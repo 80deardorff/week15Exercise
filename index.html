@@ -22,7 +22,7 @@
 		<button type="button" @click="removeAllTasks">Clear List</button>
 		<ul>
 			<li v-for="task in todoList">
-				<input :value="task">
+				<div class="d-inline" contenteditable="true">{{ task }}</div>
 				<button type="button" @click="removeTask(task)">X</button>
 			</li>
 		</ul>
@@ -37,8 +37,9 @@
 	<!-- JS SCRIPT -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	<!-- VUE.JS SCRIPT -->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- EXTERNAL JS SCRIPT -->
+	<script src="js/resizer.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

@@ -17,8 +17,5 @@ var todo = new Vue({
         removeAllTasks: function() {
             this.todoList = [];
         }
-        // editTask: function(task) {
-        //     var index = this.todoList.indexOf(task);
-        // }
     }
 });

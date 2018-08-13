@@ -6,7 +6,6 @@ section input {
     width: 300px;
 }
 
-li input {
-    border: none;
-    width: auto;
+li {
+    list-style-type: none;
 }
