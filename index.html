@@ -15,7 +15,18 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
+	<div id="todo">
+		<section>
+			<input type="text" placeholder="What do you need to do?" v-model.trim="newTask" @keyup.enter="addTask">
+		</section>
+		<button type="button" @click="removeAllTasks">Clear List</button>
+		<ul>
+			<li v-for="task in todoList">
+				<input :value="task">
+				<button type="button" @click="removeTask(task)">X</button>
+			</li>
+		</ul>
+	</div>
 
 
 <!-- SCRIPTS -->
@@ -25,6 +36,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<!-- JS SCRIPT -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<!-- VUE.JS SCRIPT -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<!-- EXTERNAL JS SCRIPT -->
 	<script src="js/main.js"></script>
 </body>
