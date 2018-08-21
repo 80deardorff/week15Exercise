@@ -16,6 +16,12 @@ var todo = new Vue({
         },
         removeAllTasks: function() {
             this.todoList = [];
+        },
+        editTask: function(task) {
+            var index = this.todoList.indexOf(task);
+            var edit = document.getElementsByTagName('input')[index + 1];
+            edit.blur();
+            this.todoList.splice(index, 1, edit.value);
         }
     }
 });

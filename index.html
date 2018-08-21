@@ -14,7 +14,7 @@
 	<!-- MAIN CSS LINK -->
 	<link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body class="bg-secondary">
 	<div id="todo">
 		<section>
 			<input type="text" placeholder="What do you need to do?" v-model.trim="newTask" @keyup.enter="addTask">
@@ -22,7 +22,7 @@
 		<button type="button" @click="removeAllTasks">Clear List</button>
 		<ul>
 			<li v-for="task in todoList">
-				<div class="d-inline" contenteditable="true">{{ task }}</div>
+				<input class="d-inline text-white" v-bind:value="task" @blur="editTask(task)" @keyup.enter="editTask(task)">
 				<button type="button" @click="removeTask(task)">X</button>
 			</li>
 		</ul>
@@ -39,7 +39,6 @@
 	<!-- VUE.JS SCRIPT -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- EXTERNAL JS SCRIPT -->
-	<script src="js/resizer.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
