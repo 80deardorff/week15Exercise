@@ -22,7 +22,7 @@
 		<button type="button" @click="removeAllTasks">Clear List</button>
 		<ul>
 			<li v-for="task in todoList">
-				<input class="d-inline text-white" v-bind:value="task" @blur="editTask(task)" @keyup.enter="editTask(task)">
+				<span contenteditable="true" class="d-inline text-white preventBr" v-bind:value="task" @blur="editTask(task)" @keyup.enter="editTask(task)" @keydown.enter="preventBr">{{ task }}</span>
 				<button type="button" @click="removeTask(task)">X</button>
 			</li>
 		</ul>

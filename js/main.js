@@ -19,9 +19,24 @@ var todo = new Vue({
         },
         editTask: function(task) {
             var index = this.todoList.indexOf(task);
-            var edit = document.getElementsByTagName('input')[index + 1];
+            var edit = document.getElementsByTagName('span')[index];
             edit.blur();
-            this.todoList.splice(index, 1, edit.value);
+            this.todoList.splice(index, 1, edit.innerText);
+        },
+        preventBr: function() {
+            if (this.keypress = 13) {
+                event.preventDefault();
+                return false;
+            }
         }
     }
 });
+
+// PREVENTS LINEBREAK FROM OCCURRING WHEN HITTING ENTER KEY
+
+// $("span").keypress(function(){
+//     if (this.keypress == 13) {
+//         event.preventDefault();
+//         return false;
+//     }
+// });
